@@ -4,15 +4,15 @@ import { SITE_TITLE } from '../config';
 ---
 
 <header>
-	<h2 class="text-green-500">
+	<!-- <h2 class="text-green-500">
 		{SITE_TITLE}
-	</h2>
+	</h2> -->
+	<a href="/">
+		<div class="mb-4">
+			<img src={"/images/logo-white.png"} class="h-16 aspect-auto mx-auto" alt={SITE_TITLE}/>
+		</div>
+	</a>
 	<nav class="flex items-center justify-around">
-		<a href="/">
-			<div>
-				<img src={"/images/logo-white.png"} class="h-16 aspect-auto"/>
-			</div>
-		</a>
 		<HeaderLink href="/">Home</HeaderLink>
 		<HeaderLink href="/projects">Proyectos</HeaderLink>
 		<HeaderLink href="/blog">Blog</HeaderLink>
