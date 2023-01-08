@@ -1,9 +1,8 @@
 ---
 import ProjectCard from '../components/ProjectCard.astro';
+import Projects from '../components/Projects.astro';
 import Layout from '../layouts/Layout.astro';
-import { getProjects } from '../services';
 
-const projects = await getProjects()
 ---
 <Layout>
 	<main>
@@ -18,8 +17,6 @@ const projects = await getProjects()
 			<img class="absolute w-32 bottom-0 right-4" src="/images/NI.webp" alt="">
 		</article>
 
-		<div class="flex flex-row gap-x-4">
-			{projects.map(project => <ProjectCard project={project} />)}
-		</div>
+		<Projects/>
 	</main>
 </Layout>
