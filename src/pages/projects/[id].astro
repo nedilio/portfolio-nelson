@@ -12,12 +12,15 @@ export async function getStaticPaths() {
     })
 }
 const {id} = Astro.params
-const {title,description,technologies} = Astro.props.project
 console.log(Astro.props.project)
+const {title, description, technologies, image, url} = Astro.props.project
 ---
 <Layout title={title}>
-
-    <h1>{title}</h1>
+    <img class="mb-4 aspect-auto" src={`/projects/${image}`} alt={title}>
+    <div class="border-b-green-700 border-b-2 mb-4">
+        <h1 class="text-3xl text-green-600 pb-2">{title}</h1>
+        <ul class="flex gap-2 text-xs mb-2">{technologies.map(tech=><li>{tech}</li>)}</ul>
+    </div>
     <p>{description}</p>
-    <ul>{technologies.map(tech=><li>{tech}</li>)}</ul>
+    <a href={url} class="transition-all text-green-600 hover:text-green-500 ease-in duration-200 hover:underline" target="_blank">Go to site</a>
 </Layout>
