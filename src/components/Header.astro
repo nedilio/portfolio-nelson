@@ -1,0 +1,31 @@
+---
+import HeaderLink from './HeaderLink.astro';
+import { SITE_TITLE } from '../config';
+---
+
+<header>
+	<h2 class="text-green-500">
+		{SITE_TITLE}
+	</h2>
+	<nav class="flex items-center justify-around">
+		<a href="/">
+			<div>
+				<img src={"/images/logo-white.png"} class="h-16 aspect-auto"/>
+			</div>
+		</a>
+		<HeaderLink href="/">Home</HeaderLink>
+		<HeaderLink href="/projects">Proyectos</HeaderLink>
+		<HeaderLink href="/blog">Blog</HeaderLink>
+		<HeaderLink href="/about">About</HeaderLink>
+		<HeaderLink href="https://twitter.com/nedilio" target="_blank">Twitter</HeaderLink>
+		<HeaderLink href="https://github.com/nedilio" target="_blank">GitHub</HeaderLink>
+	</nav>
+</header>
+<style>
+	header {
+		margin: 0em 0 2em;
+	}
+	h2 {
+		margin: 0.5em 0;
+	}
+</style>

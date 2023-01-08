@@ -1,0 +1,23 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getProjects } from "../../services"
+
+export async function getStaticPaths() {
+    const projects = await getProjects()
+    return  projects.map(project =>{
+        return {
+            params: { id: project.id },
+            props: { project },
+        };
+    })
+}
+const {id} = Astro.params
+const {title,description,technologies} = Astro.props.project
+console.log(Astro.props.project)
+---
+<Layout title={title}>
+
+    <h1>{title}</h1>
+    <p>{description}</p>
+    <ul>{technologies.map(tech=><li>{tech}</li>)}</ul>
+</Layout>

@@ -1,0 +1,29 @@
+---
+import ProjectCard from '../components/ProjectCard.astro';
+import Layout from '../layouts/Layout.astro';
+import { getProjects } from '../services';
+
+const projects = await getProjects()
+---
+<Layout>
+	<main>
+		<h1 class="text-green-500">👨🏻‍💻 Hola, soy Nelson!</h1>
+		<article class="bg-green-700 rounded-2xl p-8 pr-20 relative mb-4 text-slate-200">
+			<p>
+				Soy un desarrollador frontend altamente motivado y apasionado por la creación de experiencias de usuario increíbles y atractivas. He estado trabajando en el desarrollo de aplicaciones web y móviles durante los últimos 2 años y he adquirido una amplia gama de habilidades técnicas.</p>
+			<p>
+				He trabajado en proyectos para empresas de todos los tamaños, desde startups hasta grandes corporaciones, y he desarrollado aplicaciones web y móviles para una variedad de industrias, como el comercio electrónico, el entretenimiento y la salud.
+			</p>
+			<p>
+				Soy proficiente en una amplia gama de tecnologías y herramientas de desarrollo frontend, como HTML, CSS, JavaScript, React y Angular. También tengo experiencia en la implementación de pruebas automatizadas y el mantenimiento de aplicaciones en producción.
+			</p>
+			<p>
+				En mis proyectos anteriores, he demostrado mi capacidad para trabajar en equipo y cumplir con plazos apretados, así como mi habilidad para aprender y adaptarme a nuevas tecnologías y herramientas rápidamente. Estoy siempre dispuesto a tomar nuevos desafíos y estoy entusiasmado con la oportunidad de seguir desarrollando mi carrera como desarrollador frontend.</p>
+			<img class="absolute w-32 bottom-0 right-4" src="/images/NI.webp" alt="">
+		</article>
+
+		<div class="flex flex-row gap-x-4">
+			{projects.map(project => <ProjectCard project={project} />)}
+		</div>
+	</main>
+</Layout>
