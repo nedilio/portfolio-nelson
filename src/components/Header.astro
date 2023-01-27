@@ -1,24 +1,21 @@
 ---
 import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE } from '../config';
+import SocialLink from './SocialLink.astro';
+import GithubLogo from './GithubLogo.astro';
+import TwitterLogo from './TwitterLogo.astro';
 ---
 
 <header>
-	<!-- <h2 class="text-green-500">
-		{SITE_TITLE}
-	</h2> -->
-	<a href="/">
-		<div class="mb-4">
-			<img src={"/images/logo-white.png"} class="h-16 aspect-auto mx-auto" alt={SITE_TITLE}/>
-		</div>
-	</a>
-	<nav class="flex items-center justify-around">
+	<div class="mb-8 text-center">
+		<h1 class="text-4xl">Nelson Izquierdo</h1>
+		<h2 class="text-xl"><span class="text-green-500">Frontend</span> Developer</h2>
+	</div>
+	<nav class="flex items-center justify-between">
 		<HeaderLink href="/">Home</HeaderLink>
 		<HeaderLink href="/projects">Proyectos</HeaderLink>
-		<HeaderLink href="/blog">Blog</HeaderLink>
-		<HeaderLink href="/about">About</HeaderLink>
-		<HeaderLink href="https://twitter.com/nedilio" target="_blank">Twitter</HeaderLink>
-		<HeaderLink href="https://github.com/nedilio" target="_blank">GitHub</HeaderLink>
+		<SocialLink href="https://github.com/nedilio"><GithubLogo></GithubLogo></SocialLink>
+		<SocialLink href="https://twitter.com/nedilio"><TwitterLogo></TwitterLogo></SocialLink>
 	</nav>
 </header>
 <style>
