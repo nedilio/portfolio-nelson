@@ -5,7 +5,6 @@ import { collection, getDocs, getFirestore } from "firebase/firestore";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
-console.log(import.meta.env.API_KEY);
 const firebaseConfig = {
   apiKey: import.meta.env.API_KEY,
   authDomain: import.meta.env.AUTH_DOMAIN,
