@@ -4,6 +4,9 @@ import ProjectCard from './ProjectCard.astro';
 const projects = await getProjects()
 const {id} =(Astro.props)
 ---
-<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-    {projects.map(project => project.id != id && <ProjectCard project={project} />)}
-</div>
+<section>
+    <h3 class="mb-4 text-3xl text-center">Proyectos</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {projects.map(project => project.id != id && <ProjectCard project={project} />)}
+    </div>
+</section>
